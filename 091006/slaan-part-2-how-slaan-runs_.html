@@ -1,0 +1,1261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head><base href="/Users/bastlynn/Desktop/PLANEWALKER-BACKUP/mimir.planewalker.com/site/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Slaan: Part 2 - How Slaan Runs | Planewalker</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="sites/all/themes/planewalker/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="sites/default/files/css/css_cf80bd296ea1823b068d272b0c1d3d5e.css" />
+<link type="text/css" rel="stylesheet" media="print" href="sites/default/files/css/css_39b4f3ff8d72780f62c9bb21580d7359.css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="sites/all/themes/zen/zen/zen/ie.css?j" />
+<![endif]-->
+  <!--[if IE]>
+    <link rel="stylesheet" href="sites/all/themes/planewalker/ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="sites/default/files/js/js_8e705769ed6a79e0c52074dd48909682.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "dhtmlMenu": { "siblings": "siblings", "doubleclick": "doubleclick", "slide": 0, "relativity": 0, "children": 0, "clone": 0 }, "googleanalytics": { "trackOutbound": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip" }, "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/default/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "border_size": 10, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": true, "resize_sequence": 0, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": false, "disable_resize": false, "disable_zoom": false, "force_show_nav": false, "show_caption": true, "loop_items": false, "node_link_text": "View Image Details", "node_link_target": false, "image_count": "Image !current of !total", "video_count": "Video !current of !total", "page_count": "Page !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "original", "image_node_sizes": "()", "trigger_lightbox_classes": "", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": true, "slideshow_automatic_exit": true, "show_play_pause": true, "pause_on_next_click": false, "pause_on_previous_click": true, "loop_slides": false, "iframe_width": 600, "iframe_height": 400, "iframe_border": 1, "enable_video": false } });
+//--><!]]>
+</script>
+
+	
+			<style>
+            #main-inner{padding-right:0px !important;}
+            #sidebar-right{display: none !important;}
+        </style>
+	  
+	<script type="text/javascript" src="sites/all/themes/zen/planewalker/gutter_handler.js"></script>
+
+
+
+</head>
+
+<body class="not-front not-logged-in node-type-story no-sidebars page-091006-slaan-part-2-how-slaan-runs section-091006"><div id="page" class="heading-added"><div id="page-inner">
+    <a name="top" id="navigation-top"></a>
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+                      <div id="logo">
+              <img src="files/planewalker_logo.gif" alt="Home" id="logo-image" />
+              <a href="_.html" title="Home" rel="home" class="logo_link"></a>
+            </div>
+          
+          
+          
+        </div> <!-- /#logo-title -->
+      
+              <div id="header-blocks">
+          
+<div id="block-menu-primary-links" class="block block-menu region-odd even region-count-1 count-10  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        <h2 class="title">Primary links</h2>
+      
+  <div class="content">
+    <ul class="menu"><li class="leaf first no-dhtml "><a href="sections/30-35-pscs_.html" title="" id="dhtml_menu-278">3.0 / 3.5 PSCS</a></li>
+<li class="leaf  no-dhtml "><a href="forum_.html" title="Planewalker Forums" id="dhtml_menu-200">Forums</a></li>
+<li class="leaf  no-dhtml "><a href="wiki/grand-tour-encyclopedia_.html" title="Wiki" id="dhtml_menu-204">Wiki</a></li>
+<li class="leaf  no-dhtml "><a href="codex/planewalkers-codex_.html" title="The Planewalker&#039;s Codex" id="dhtml_menu-1037">The Codex</a></li>
+</ul>  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->        </div> <!-- /#header-blocks -->
+        
+              <div id="navbar"><div id="navbar-inner">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+<div id="block-menu-secondary-links" class="block block-menu region-odd even region-count-1 count-8  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        <h2 class="title">Secondary links</h2>
+      
+  <div class="content">
+    <ul class="menu"><li class="expanded first dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-619">Campaign Setting</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="sections/30-35-pscs_.html" title="" id="dhtml_menu-272">3.0 / 3.5 Campaign Setting</a></li>
+<li class="leaf  dhtml-menu "><a href="content/gods-list_.html" title="" id="dhtml_menu-631">| Gods List</a></li>
+<li class="leaf  dhtml-menu "><a href="resources/-sigil-resources/090906/sigil-resources_.html" title="" id="dhtml_menu-632">| Sigil Resources</a></li>
+<li class="leaf last dhtml-menu "><a href="sections/planescape-other-systems_.html" title="" id="dhtml_menu-634">| Other Systems</a></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-620">| Resources</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="sections/factions_.html" title="" id="dhtml_menu-627">Factions</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/npcs_.html" title="" id="dhtml_menu-628">| NPCs</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/creatures_.html" title="" id="dhtml_menu-630">| Creatures</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/equipment_.html" title="" id="dhtml_menu-629">| Equipment</a></li>
+<li class="leaf last dhtml-menu "><a href="sections/adventures_.html" title="" id="dhtml_menu-633">| Adventures</a></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-621">| Fiction</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="sections/chronicles_.html" title="" id="dhtml_menu-279">Chronicles of the Planes</a></li>
+<li class="leaf  dhtml-menu "><a href="eye-of-xaos_.html" title="Eye of Xaos" id="dhtml_menu-1041">| Eye of XAOS</a></li>
+<li class="leaf  dhtml-menu "><a href="fiction/sigis/080704/sigis_.html" title="S.I.G.I.S" id="dhtml_menu-1043">| S.I.G.I.S.</a></li>
+<li class="leaf last dhtml-menu "><a href="ladys-sharper-eye_.html" title="The Lady&#039;s Sharper Eye" id="dhtml_menu-1042">| The Lady&#039;s Sharper Eye</a></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-638">| Bonus Material</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="sections/news_.html" title="" id="dhtml_menu-639">News</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/interviews_.html" title="" id="dhtml_menu-640">| Interviews</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/digital-gaming_.html" title="" id="dhtml_menu-642">| Digital Gaming</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/downloads_.html" title="" id="dhtml_menu-643">| Downloads</a></li>
+<li class="leaf last dhtml-menu "><a href="sections/links_.html" title="Links" id="dhtml_menu-845">| Links</a></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-622">| Archives</a><ul class="menu"><li class="leaf first last dhtml-menu "><a href="http://wings.planewalker.com" title="" id="dhtml_menu-644">On the Wings of Mephits</a></li>
+</ul></li>
+<li class="leaf  dhtml-menu "><a href="faq/080101/planewalker-general-faq_.html" title="" id="dhtml_menu-623">| FAQ</a></li>
+</ul>  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->
+        </div></div> <!-- /#navbar-inner, /#navbar -->
+         
+      
+      
+    </div></div> <!-- /#header-inner, /#header -->
+    
+    <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+    <div id="content">
+      
+<div id="contentframe-t"><div id="contentframe-l"><div id="contentframe-r"><div id="contentframe-b">
+<div id="contentframe-tr"><div id="contentframe-tl"><div id="contentframe-br"><div id="contentframe-bl" class="contentframe_bl">
+    
+      <div id="content-inner" class="content_inner">
+        
+                  <div id="content-header">
+            <div class="breadcrumb"><a href="_.html">Home</a> &raquo; Slaan: Part 2 - How Slaan Runs</div>                          <h1 class="title">Slaan: Part 2 - How Slaan Runs</h1>
+                                                          </div> <!-- /#content-header -->
+        
+                  <div id="content-top">
+            
+<div id="block-block-16" class="block block-block region-odd odd region-count-1 count-9  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->          </div> <!-- /#content-top -->
+                
+        <div id="content-area">
+          <div id="node-10358" class="node node-type-story odd"><div class="node-inner">
+
+  
+  <div class="picture">
+  <a href="users/mechalich_.html" title="View user profile."><img src="sites/files/icons/generic.jpg" alt="Mechalich&#039;s picture" title="Mechalich&#039;s picture"  /></a></div>
+  
+  
+      <div class="meta">
+              <div class="submitted">
+          Submitted by <a href="users/mechalich_.html" title="View user profile.">Mechalich</a> on Tue, 2009-10-06 11:57        </div>
+      
+              <div class="terms terms-inline"> in <ul class="links inline"><li class="taxonomy_term_21 first"><a href="article-type/location_.html" rel="tag" title="">Location</a></li>
+<li class="taxonomy_term_53"><a href="planar-locations/inner/smoke_.html" rel="tag" title="">Smoke</a></li>
+<li class="taxonomy_term_443 last"><a href="sections/30-/-35-edition_.html" rel="tag" title="">3.0 / 3.5 Edition</a></li>
+</ul></div>
+          </div>
+  
+  <div class="content">
+    <div class="dice_rolls">
+</div> <p><span style="font-weight:bold">Slaan Part 2 - How Slaan Runs</span></p>
+
+<p><span style="text-decoration:underline">Introduction</span></p>
+
+<p>	This place isn’t like Sigil; it hasn’t got a Lady of Pain to straighten out all the inconvenient messes that happen when you throw a bunch of races together into a mix and ask them to tolerate each other. Without a nigh-omnipotent overseer, the people who live here have to try and run things themselves, and keep the city useful and livable for the residents.</p>
+
+<p>	Most people take a bit of time to figure out just how Slaan works, as it’s different from a prime burg or most other inner planar burgs, which tend to be ruled by a single group. Still, it’s not all that complicated, and any merchant who trades in Slaan on a regular basis can explain the whole set up, as can just about any true citizen.</p>
+
+<p>	Basically running Slaan works out like this, there are the shadow rulers, the Council, and gladiatorial combat.</p>
+
+<p><span style="text-decoration:underline">The Shadow Rulers</span></p>
+
+<p>	No one knows who’s really in charge of Slaan. The city council is nominally in charge, and conducts all the day-to-day business, but members of that admittedly powerful body seem to get their orders from somewhere else. It’s like the Council are a bunch of glorified bureaucrats quibbling amongst themselves about orders handed down from on high. Still, as much as the average citizen never notices it, orders do come down, and some things happen on their own. If an army of Belkers is about to descend on the city, the Council will know that it’s time to form up the militia, likewise Councilors will be told who to appoint to conduct critical negotiations with a speaker for the Efreet every once in a while. Beyond these strange directives, there are standard laws that the Council doesn’t have the power to change, such as the basic gladiatorial rules, the freedom of the city to all races save genies, and the allowance for trade. Any Councilor who tries to violate these rules, or anyone else for that matter, tends to end up dead.</p>
+
+<p>	Many wonder just who rules Slaan, and many theories have been proposed over the years. While some, like a secretive Illithid elder brain hidden in the walls, or a mysterious dragon overlord, have long since been disproved, the mystery remains. Many suspect the Rilmani, a group of powerful smoke paraelementals, or a proxy of the god Io. Only one thing is certain about the rulers is certain, they give orders and the Xantu listen. Though the least populous lizard race in the city, the Xantu are perhaps the most dangerous, and anyone shamelessly flouting the city’s edicts ends up dead on a Xantu knife or spell. It might not seem as certain as the Lady of Pain’s Mazes, but fugitives have run across plane after plane, only to be inevitably tracked down and slain.</p>
+
+<p><span style="text-decoration:underline">The Council of Slaan</span></p>
+
+<p>	The city council of Slaan runs the city from day to day, and is empowered to make rulings that do not counteract those laws set in stone by the rulers of the city. The Council sets trade and civic law, collects taxes, and runs ministries of necessary bureaucracy. It is the Council that sees that the crops are kept safe, the Khaasta patrollers are kept paid, and the water system continues to function.</p>
+
+<p>	The council meets only rarely, once a month at most, in order to consider business before it. Mostly this consists of changing trade restrictions, determining the fate of any large civic projects, and meeting with representatives from other cities and power groups. For the rest each member of the council runs his or her own aspect of city affairs. The Council number never changes, and the ministry structure is never reorganized, though Council members may be dismissed by the city rulers and are only raised to their status by those beings.</p>
+
+<p>	The Council has an unusual relationship with the Ministry of Dueling, the office that conducts Slaan’s gladiatorial practices. That minister may only vote in a tie within the rest of the council, and the basic rules of that ministry are not subject to review by the council, which tends to leave the Minister of Dueling in a very strange position. All generally believe that the Minister of Dueling is always a spy for the city’s rulers.</p>
+
+<p>	Meetings of the Council are kept secret from the public, but the councilors are known. Anyone may be called before a meeting of the council if it is considered necessary, but they must appear before the group alone. The Council never calls multiple people before it. The Hall of the Council is enchanted with a permanent zone of truth, which no known magic can violate. This actually does tend to increase honesty, as the reptilian members of the council rarely practice the kind of evasive wording common among human politicians.</p>
+
+<p>	There are eleven ministries in Slaan, and eleven members of the Council. While the rulers can appoint anyone they choose, of any race, for the past four centuries every council member has been of a reptilian race.</p>
+
+<p>	<span style="text-decoration:underline">The current Councilors are:</span></p>
+
+<p><span style="font-style:italic">Minister of Agriculture</span> <br />
+Kler (Male lizard man/commoner/NG) – Kler is the least political member of the council, having been nothing more than one farmer among many before his appointment by the rulers. Kler is however, one of the best farmers anyone has ever met, having been successful for thirty straight years despite the vagaries of Smoke’s strange climate. He was appointed to the council five years ago, and has gradually settled into a policy designed to make sure only that the city is consistently fed. With the pessimism common to all farmers, Kler is very defensive, always worried that policies will be changed so that the people will starve. He is a relatively kind lizard, and among the most trustworthy council members, but often defers to other more politically experienced representatives.</p>
+
+<p><span style="font-style:italic">Minister of Citizens</span> <br />
+Fersam (Female lizard man/fighter/TN) – The mistress of the citizenry is a wild card on the council, for from her position of oversight of the established populace of the city (all those considered permanent residents) she chooses not to care. A former enforcer for the construction groups in the city, it is unclear why she was picked eight years ago to serve on the council. The bureaucracy beneath her continues its tasks of monitoring and labor, but it becomes steadily less effective at its duties. The entire health aspect of this ministry has been subsumed into the Ministry of Water, and the essential charity coordination of this office is gradually coming under the reluctant control of the Minister of Religion. Many believe that the rulers will eject Fersam, still relatively young, from the council soon.</p>
+
+<p><span style="font-style:italic">Minister of Construction</span><br />
+Tolar (Male lizard man/expert/TN) – In contrast to the Minister of Citizens, Tolar is a proactive minister who wishes to improve Slaan and make it the cleanest and brightest Planar metropolis in existence. While this goal is probably unattainable (not that anyone is measuring) Tolar constantly pressures for money for public works projects, and employs far more personnel than did his predecessor. This has made him a bitter enemy of the Minister of Monies. Tolar is also the best friend on the council of the Troglodytes and Kobolds, since he employs many of them. They often go to this ministry with complaints, which has caused some friction with both the Minister of Citizens and of Justice even in the three years since Tolar was appointed. Tolar is a middle-aged lizard man who formerly worked as a high ranked administrator within the Ministry of Construction.</p>
+
+<p><span style="font-style:italic">Minister of Defense</span><br />
+Decai Sce VI (Male Scel/Fighter/LN) – This Minister is the sixth Scel by the same name to hold this position, all members of the same family in a heritage that has lasted almost two hundred years. In almost no way different from the father who previously held the post, Decai Sce VI is a conservative but highly competent officer who worked his way up through Slaan’s garrison army, and now serves as its commander in chief. Though he has been minister for eight years, it has not yet been necessary for Sce to command the whole force in action, or call up the city militia to combat an outside foe. This relative inactivity keeps many skeptical of Sce, but his vote is often courted, since few policies actually affect his ministry, and he is free to vote his feelings. The Scel dislikes being manipulated however, and considers it his obligation to abstain if a vote has no bearing on his ministry. It is expected that barring death in combat or some massive display of incompetence, Decai Sce VI will have a long service as Minister of Defense, since the rulers apparently appreciate his family.</p>
+
+<p><span style="font-style:italic">Minister of Dueling</span><br />
+Nil (? Xantu/Rogue (Assassin)/TN?) – Six months ago the former Minister of Dueling, an Elgar, was found to be in violation of the magical augmentation provision of Slaan’s dueling rules, and when this was examined a number of other cases of corruption were uncovered. Despite fleeing immediately to Hoard in Mineral, the Minister was killed by a Xantu assassin within three days. That assassin, Nil, was appointed Minister of Dueling in his place. Nil is a strange being, whose views are completely unknown. He does absolutely nothing to run the Ministry, relegating all tasks to the ranking official, a Mon’Varan warrior named Viriom. Nil has yet to be presented a tie in which to cast a vote (indeed the other ministers have actively worked to prevent this from happening) and is believed to be simply an interim minister until the rulers determine someone else. Nil is a complete wild card at the moment, and no one knows what the Xantu thinks about anything. Viriom (see the Dueling section for more information) is currently hiding behind Nil’s authority, and knows he cannot be appointed Minster, as too many of his Elgar subordinates despise him. The situation is in flux, and considered by many citizens quite dangerous.</p>
+
+<p>[/i]Minister of Justice[/i]<br />
+Leessha (Female Khaasta/ fighter/LE) – This vicious and bitter patroller is in charge of keeping the peace within Slaan. Coached by fifteen years of street patrol and command anger, her ministry runs both all the Khaasta patrols and the court system, which is dominated by lizard men and pogdrac. The result is a system of extremely harsh enforcement with lighter punishments. Many criminals fear the beating they may receive from Khaasta patrollers far more than the sentence they will get from the judge, and surrender immediately. Leessha has tried to get more harsh judges appointed, but many resent having a Khaasta as Minister of justice at all. Still, if she considers it important enough, she’ll make sure a case gets to one of the few harsh judges in the system. Because of links between justice and duels in Slaan, Leessha hopes to ally with Nil, as she had with the former Minister of Dueling, but the Xantu resists her probes. Leesha has been Minister of Justice since eight years ago, appointed at the same time as Fersam and several other Ministers, when a crop of older ministers was collectively dismissed.</p>
+
+<p><span style="font-style:italic">Minister of Monies</span><br />
+Vec (Female Helod/ wizard/NE) – While the Minister of Dueling may be frightful, and the Minister of Justice harsh, it is the Minister of Monies who is most hated by the rest of the Council and the city. Vec is a cruel Helod woman possessed by tremendous greed. She has a fondness for high taxes and sees no reason why she shouldn’t control every penny in the city. Most of the other Ministers, even the uncaring Minister of Citizens, dislike her, as she actively holds up their own works and causes problems. Budget cutting by Vec has made the city fiscally conservative in her eight years in office, but her tenure may not be much longer as the former tax officer is quite old. Her efforts to raise taxes greatly have not been successful so far, as the powerful Minister of Trade has no intention of allowing such “follies” and will simply run roughshod over her. </p>
+
+<p><span style="font-style:italic">Minister of Outsiders</span><br />
+Yallian (Female lizard man/ rogue/CG) – The kindest and most pleasant of the Ministers, this career bureaucrat is something of a xenophile. She sticks up greatly for those passing through Slaan, something not precisely her responsibility. While the Ministry of Outsiders officially deals only with disputes among outsider matters, land distribution in the Mouth, transportation, use of the gates, and other related effects, Yallian is something of a citizen advocate. She believes the dominance of the city by reptiles is bad and should be worked against. While many among the non-reptile population, particularly merchants, love her, the more experienced consider her naïve. Yallian has made many enemies, especially the Ministers of Trade and Justice in her crusading efforts, and the majority lizard population is none too fond of her. Still, she can take some credit for prospering trade in the past eight years, and only this fact has kept the Minister of Trade from crushing her in the Council.</p>
+
+<p><span style="font-style:italic">Minister of Religion</span><br />
+Hilcyon (Female Pogdrac/ druid/TN) – For as long as anyone can remember in Slaan the Minister of Religion has been a Pogdrac druid. Hilcyon is a proud member of that long tradition of balanced ministers. Welcoming any beliefs into the city so long as the balance remains secure and the druids’ conservatory agenda remains, she is a popular person, and has made allies out of expected enemies in the powerful faiths of the dragon gods, elemental lords, and even the Egyptian Ptah. While Hilcyon tries to plot a middle course in the Council, and has for the most part succeeded in her eight years, she willingly takes unpopular stands when she considers it right, and may vote contrary to the entire council on occasion, such as in a decision to allow worshippers of the Elder Elemental God into the city (an opposition vote later vindicated when the temple was attacked by vengeful mobs). On non-religious matters Hilycon often takes her lead from the Minister of Trade, who she recognizes as a talented expert, if a biased one, who has made the city successful.</p>
+
+<p><span style="font-style:italic">Minister of Trade</span><br />
+Rarlshar (male lizard man/expert/LN) – He may be the most visibly powerful being in Slaan, and is quite aware of it. Ralshar is an orderly lizard man who believes in free trade for the purpose of maximum profit for all involved. However, he only considers the ultimate profit to his pockets and his reptilian relatives truly important. While fully aware of the consequences of restrictive trade laws, and that the rulers intend trade to be open, Rarlshar uses his keen sense for the market to get pocket filling taxes passed at exactly the right time. Having served as minister of trade for twelve years now, Rarlshar is confident in his position, and becoming increasingly cutthroat. He is more than willing to muscle through temporary changes in trade law to ruin a rival even knowing the council will repeal it. Still, he is not malicious, and does not seek to harm the common citizen, only other rich traders of the city. Rarlshar is an extremely skilled politician, and the city has prospered with him in his position, despite some complaints. Many other Ministers will ally with him against the Minister of Monies or Outsiders on economic matters. His greatest nemesis on the council is the Minister of Outsiders, who is close to the Arcane, Rarlshar’s greatest trade foes.</p>
+
+<p><span style="font-style:italic">Minister of Water</span><br />
+Opolin (Male ipsosaur/ ranger/TN) – Eight years ago seven elderly ministers were replaced (the six mentioned and the minister of dueling then) clearing the Council of older politicians and appointing a number of younger bureaucrats to their place, a move that has happened many times in Slaan. However, one Minister, the then seventy-five year old Opolin, was not replaced. There was a reason for this, and the Minister of Water continues to serve as a vigorous eighty-three year old. This is rather unprecedented, but the rulers made a shrewd choice to leave Opolin in charge. Age has apparently decided that the Minister of Water is outside its grasp for now, even though Opolin has chosen to begin training a successor (a curious Moloch’Phryn named Jr’Phire), and the Minister retains his nigh-absolute hold over the Ministry of Water. While the Minster of Trade is considered by many to be the most powerful known being in Slaan, within the council chambers, Rarlshar acknowledges Opolin outclasses him in almost every category. The Minister of Water is not interested in the exercise of power outside of his sphere, but his encyclopedic knowledge, incredible parliamentary skill, totally loyal staff, and tremendous history of success make him almost unbeatable with regard to water. Only the Council and Ministry members know that Opolin has conducted three wars in his sixty year tenure, beating off two aquatic attacks by Sahaugin and one by Ixilactil to conquer Slaan’s watery depths, with nothing more than his ministry’s staff and some judiciously employed hired help. Opolin has made it the rule of his tenure that Slaan’s water shall remain pure and flow uninterrupted, and there will be money provided (the Minister of Monies lives in veritable terror of Opolin interfering in something other than the water budget). When he finally dies, Slaan will undergo great change, and among those who know, it is considered that it will almost certainly be for the worse.</p>
+
+<p><span style="text-decoration:underline">Gladiatorial Combat: The Duels of Slaan</span></p>
+
+<p>	The Ministry of Dueling has one purpose and one purpose only, to conduct the business of Slaan’s dueling. While Slaan has a fully functioning law enforcement and legal system, and an active legal code, without an incredibly powerful being to enforce the peace like the Lady of Pain, tempers flare hot and heavy between the jointed races, especially if fiends or others come to town. The lizard races in particular are fond of settling quarrels with fist and weapons and so it has always been a policy in the city to allow for duels in arenas.</p>
+
+<p>	The dueling system is quite complicated, and quite prevalent, as duels form one of Slaan’s major public attractions. The Ministry of Dueling operates an area of arenas both in the Mouth, the Desert, and the Bogs, though only the Mouth may involve non-reptilian residents of the city. The rules for running duels are complicated, and the Ministry has a highly involved system for many cases, but the rules for challenges are quite simple. Anyone may challenge anyone else, but acceptance is totally voluntary, no one may be forced into a duel. Blackmailing someone to duel is also forbidden, and to prevent it from happening illegitimately accusations of blackmailing someone into a duel are investigated seriously, and can face capital punishment. Duels are not a method of legal enforcement, and trials by combat are not part of the legal system.</p>
+
+<p>	While the specifications of duels vary, there are several ironclad systems set into place:</p>
+
+<p>I.	Duels are allowed only by completely voluntary agreement of both involved parties.</p>
+
+<p>II.	All duels are one on one only, no other numbers shall be permitted, creatures such as animal companions and familiars are considered to break this rule if found participating.</p>
+
+<p>III.	The level of lethality involved shall be agreed upon by both participants, or set by the dueling authority in the absence of agreement.</p>
+
+<p>IV.	The outcome of a duel shall not involve any transfer of spoils of any kind between participants or bystanders save official bets placed with the Ministry of Dueling, and the Ministry alone.</p>
+
+<p>V.	A duly appointed representative of the Minstry of Dueling shall oversee all duels.</p>
+
+<p>VI.	While the Ministry of Dueling and the participants may agree on what items and equipment by brought to the dueling arena, there shall be no preset effects or magics in use, these are expressly forbidden (ie. Fortifying spells, drinking potions before duels, etc.).</p>
+
+<p>VII.	True dragons, but not half-dragons, drakes, or related creatures, are expressly forbidden to participate in duels.*<br />
+*The reason for this prohibition is unknown.</p>
+
+<p>Within the boundaries of these restrictions the Ministry of Dueling tends to allow just about any sort of duel. They are interested not in fairness, but in making money for the city and putting on a good show. However, the Dueling officials make sure they know what is going into a duel, such as magic items people possess, the relative power of spellcasters, and the relative capabilities of races. However, they stress that duels should resolve disputes only as agreed upon by the participants, a practice that the lizard races fit themselves to admirably, but that causes some difficulty among other races.</p>
+
+<p>	Of course, vindictive duels are only part of the system. While the same rules hold, the Ministry of Dueling does the majority of its betting and the majority of its fights in a series of public sport duels, or the Gladiators Cup. While these duels are unusual among sport duels, since playing to the crowd does not change the preset status, they are still entertainment. The ministry runs both an amateur’s circuit and a champion’s circuit. Anyone with the skill can participate in these duels, but the rules are most strict. Duel structures exist both for non-lethal and lethal duels, and for several different types of combat: unarmed, armed with any one weapon but unarmored, armed and armored as the duelist chooses in non-magical gear, and carrying all the equipment owned by the duelist. The champion’s circuit proscribes only non-lethal duels armed and armored in non-magical gear, while anyone can enter the champion’s circuit anyone who does and loses forfeits 2,000 gp to the Ministry of Dueling until they have an established win on that circuit. Anyone participating in sport duels must accept their opponent. Magic is not allowed in sport duels.</p>
+
+<p>	These sport duels often branch out into punitive duels as opponents gain mutual animosity, and often a set of these duels has ended only to have the participant’s friends challenge to duel after duel in revenge, especially among humans.</p>
+
+<p>	The current leader of the Champion’s Circuit is a ronin topaz half-dragon samurai named Hirei, an utter master of the katana. The all time dueling champion in Slaan is a Tsnng spearmaster named Knnnttt, who appears every decade or so. In over a thousand matches against the best the city has to offer, he has never been defeated.</p>
+
+<p>	Betting is allowed, both on punitive and sport duels, but only with the appointed gambling masters of the Ministry of Dueling. The Ministry of Dueling polices all matches, sets all odds, referees conditions, monitors against cheating and performs all the other actions necessary of a violent sports commission. Corruption is their biggest enemy, and they struggle mightily against it. They also struggle heavily against duels illegally begun under duress, an impossible challenge, because the distinction between a suicidal duel accepted for the sake of pride or to make a statement and a duel forced upon someone simply cannot be defined, but the commission does its best. Viriom, who is currently the Vice Minister of Dueling (the only vice minister in the city) runs the operations of the entire ministry, the city’s largest, in the absence of any leadership from Nil. This has unfortunate consequences, for while Viriom is a skilled administrator with a finger on the pulse of the duels, and a good sense of what level of fairness must remain, the Mon’Varan comes into conflict with the many Elgar members of the Ministry. Fierce Elgar warriors make up the majority of dueling judges and referees, and also most of the betting and payroll guards. They detest a Mon’Varan leader, and while they accepted the state of affairs while an Elgar was the actual minister, they are extremely uncomfortable with this situation given Nil’s distinct lack of leadership. For the moment matters are contained to grumbling, but if the rulers don’t act swiftly to appoint a new minister, the Elgar may try and take matters into their own hands.</p>
+
+<p><span style="text-decoration:underline">Other Powers of Slaan</span></p>
+
+<p>	The council may rule the basic structure of Slaan, but plenty of others have a say in its politics. Some of these groups are simple ones like guilds, trade companies, or even the factions and sects that come to the city. Such groups don’t really have any known expression of power however, or any place in the city hierarchy that is recognized. Some other groups do. Among these three will be discussed here: the ambassadors, the religions, and the criminals.</p>
+
+<p><span style="text-decoration:underline">The Ambassadors of Slaan</span></p>
+
+<p>	Slaan, as a sovereign city, has many outside power groups to interact with. While much of such dealings are handled by trade policy and the routine actions of the Ministry of Outsiders, something more formal is sometimes required and a system was long ago put into place. Slaan accepts Ambassadorial representatives from those interested.</p>
+
+<p>	This system has caused much of the outsider and sectarian power in Slaan to cluster around the Ambassadors, who with their official status can intercede with the council and perform other critical duties. They pursue their own agendas beyond simply reporting and conducting negotiations between their home state and Slaan. Power concentrates around them, and the Ambassadors may be able to direct shifts in the groups they represent, especially in the Outsider dominated Mouth.</p>
+
+<p>	The number of Ambassadors does fluctuate, as various groups chose whether or not to have formalized representative relationships (the most extreme case of this is the Opposition, who have been known to declare or remove an Ambassador almost weekly). Also, some Ambassadors, such as those who represent the Archomentals, play no real part in the city’s politics. What follows is a list of the major and notable Ambassadors. The offices of Ambassadors are maintained in the Bogs, near the Ministry buildings. Many Ambassadors also have private residences in the Mouth.</p>
+
+<p><span style="font-style:italic">The Quick List:</span><br />
+ Hoard, Adrift, Erchakk, The Hidden City, Yuhnmoag, City of Brass, Citadel of Ice and Steel, Great Dismal Delve, City of Glass, The Conglomerate of Serpentine Officials, The Primals, Anatomists, and Cinderformed.</p>
+
+<p><span style="font-style:italic">Adrift</span> <br />
+Alison Mareket (female human/ expert/LN) is a trader, pure and simple. Her city of Adrift, in the slightly more accommodating plane of Steam is a peaceful place, but one that seeks the vibrancy and wealth of Slaan. However, it lacks many of Slaan’s unique features, and is heavily dominated by Djinn influence. Adrift seeks ever-increasing trade contracts, and especially contacts for its business of highly flavored waters and wines. Ambassador Mareket is trying to siphon as much new business as possible into Adrift, and she really doesn’t care what kind of business it is.</p>
+
+<p><span style="font-style:italic">Anatomists</span> <br />
+Dr. Joll Nascsa (male Dact/ rogue/wizard/CN) this inquisitive Dact is actually a native of Slaan, and became the Anatomist ambassador simply by virtue of being the only Dr. ranked member living in the city. The decision has turned out to be wise, as the Anatomists have won some goodwill by putting a reptilian representative in charge of the city. Nascsa’s major achievement to this point has been getting a provision passed that allows Anatomists to purchase troglodyte and kobold dead from the willing (the other races have yet to accede to such a request). Otherwise the young sect holds few political activities and doesn’t challenge any major rulings.</p>
+
+<p><span style="font-style:italic">Cinderformed</span> The burn but be not burned ones recognized the plane of smoke as their headquarters, and actually head up the whole sect in Slaan. However, the Sect’s leader keeps to the Cinderformed’s own compound, and doesn’t serve as ambassador. That duty falls to one of the Unburned, a fire genasi named Hestat Fero (male genasi(fire)/ wizard/CG). The Genasi’s got a burning temper, but is a decent fellow otherwise. He dislikes the efreet greatly, and enjoys not having to see them in Slaan, so he rarely leaves. Due to the high membership in the Cinderformed in the city he actually wields a decent amount of power, but only to the Council. The rulers have got a direct line to his boss when they have something to discuss with the Cinderformed. Hestat’s big political task is trying to keep the number of Pyros in the city as low as possible.</p>
+
+<p><span style="font-style:italic">Citadel of Ice and Steel</span> <br />
+The Djinn’s ambassador is a potent basher, one Gravelthunder (Female Cloud Giant/Adept 4/CG). She’s thunderous, proud, imposing, and a strong orator. Just the kind of person the Djinn want to convince people in Slaan to fight for them and to favor their policies over those of the much crueler efreet. She gets the job done admirably, and her in-your-face method of policy practice has a lot in common with the slashing openness of lizard man practice, so they get along. However, some of the other members of the city find the giantess miserably uncultured, and the more trade-oriented ambassadors simply find her war focus limiting and irritating. This has limited her ability to work against the efreet’s ambassador somewhat.</p>
+
+<p><span style="font-style:italic">City of Brass</span> <br />
+The Efreet ambassador is a suave bastard, but still a bastard. Jiessen Scaldingbrand, (male salamander noble/rogue 5/NE) is cruel, vicious, and cutthroat, but he can also make one hellishly good sounding bargain. The efreet know they aren’t much liked in smoke, but they try to accumulate power in spite of it by offering nasty deals and paying outrageous prices for mercenaries. They also offer rights to loot and plunder. Jiessen is most interested in working against any plan put forward by Djinn interests, finding a way to let his masters into Slaan itself, and discovering who the city’s true rulers are. He’s not popular with the rest of Slaan’s political powers very much, and has drawn suspicion from the Rilmani most heavily of late. Many are beginning to wonder if the Xantu will not take action as well if the salamander stumbles upon something too close to the ruler’s hearts.</p>
+
+<p><span style="font-style:italic">City of Glass</span><br />
+The largest City on the Inner planes has sent a skilled ambassador to Slaan. While Kliev Hevast (male water genasi/aristocrat/CG) is a generally personable and friendly man, he deals mostly with mind numbing trade policy at the dealing table with the Minister of Trade. While the relations between the cities are generally cordial and business-like, Kliev and Rarlshar are fierce foes over every single piece of gold that passes between the cities. These schemes never really spill out into the general populace, but among the other ambassadors, ministers, and major trading groups, both sides constantly cajole and swindle for support. While Kliev doesn’t quite subscribe to Rarlshar’s business as survival of the fittest philosophy, he’s plenty cutthroat when he needs to be, and doesn’t believe in those who don’t work as hard as they must.</p>
+
+<p><span style="font-style:italic">Erchakk</span><br />
+There is probably only one smoke paraelemental that actually lives within the smokeless confines of Slaan, and that’s Kurlvapor (Large paraelemental, smoke/TN) the ambassador of the lord of smoke, the surprisingly intelligent mephit, Erchakk. Kurlvapor is cordial enough at times, and understands his master’s need to keep cordial relations with Slaan. His job is not all that intensive, mostly negotiating over vague disputes of justice or the bits and pieces of trade conducted by the smoke lord. He also opposes genie meddling in the plane, and the paraelemental ambassador is always looking for good intelligence to pass on back to Erchakk about the genie races.</p>
+
+<p><span style="font-style:italic">Great Dismal Delve</span> <br />
+Most people wonder why the Dao bother with an ambassador at all, and why they appointed such a person as Hisckat (male Tso/aristocrat/LE) to be their representative. It’s no secret that the Dao seek to constantly expand their slaving enterprises, and in Slaan this is no exception. The tso constantly lobbies for slavery to be legalized in Slaan, to allow punished criminals to be sold to the Dao, or any number of other, pro-bondage reforms. The council adamantly refuses any such things, and cautions the Tso often, however Hisckat is canny enough to know just how far he can push, given that his place is important for whenever the council of Slaan needs earth for large building projects. For now the Tso simply encourages as much illegal slavery as possible and encourages and sponsors more than his own share personally. He thinks the council and the rulers don’t know, but they are fully aware of his activities and simply choose not to shut him down.</p>
+
+<p><span style="font-style:italic">Hoard</span> <br />
+Noritai Blankscale (male human/Fighter/dragon samurai/LN) may be the most respected politician in Slaan. The “Last Honorable Man in Slaan” is respected by all, admired by most, and feared by his enemies. An old warrior, he has become a rock steady political battler who is absolutely incorruptible and tremendously alert to the pulse of the city. Many in power consider him an obstacle, but the common reptilian populace loves the man. Hoard is Slaan’s sister city in almost all respects, and Noritai is kept busy with minor trade agreements, social policies, and the policing of fugitives who try and move things between the city. While Noritai is responsible for keeping the substance of the relationship cool, as his dragon lords instruct, the veteran soldier has willingly shed blood to defend Slaan himself, and fights corruption in the politics of both cities equally, following his Sapphire teachings that all are equal under the rule. Even when he cannot take action in the political arena, Noritai has been known to give speeches to the public, and his word, trusted almost absolutely by many, can poison the populace against another.</p>
+
+<p><span style="font-style:italic">Primals</span> <br />
+The Primal ambassador, if she can even be called that, known only as Helen (female elf?/Wizard/TN), has only one political concern. Slaan and its portals must remain open and free for the use of Primals, and any unwarranted attacks on members of the sect cannot be allowed. Since Slaan has many others who would react far faster against any such blatant discrimination toward any one sect, she is almost never called upon. Indeed, Helen has only been summoned by the Council twice in the past fifty years, both times to get Primal processions that were clogging the streets out of the way, which she may or may not have actually done anything about.</p>
+
+<p><span style="font-style:italic">The Conglomerate of Serpentine Officials</span><br />
+The organization claims to represent the united interests of every Yuan-ti and Naga on the Inner Planes, and perhaps beyond. While the races in question are almost certainly not anywhere near that level of unity, the group does apparently speak for enough that the ‘Yuan-ti ambassador’ is well named. Currently a rather irritable pureblood named Kissha Vassnair (female Yuan-ti/Psion 3/NE) serves in this position. The Yuan-ti do not seek to openly advance any position in Slaan, they prefer to perform their subversion as secretly as possible. Instead, Kissha’s job is to run interference when anything is going wrong for Yuan-ti schemes and to provide protection for key operatives who get in trouble. Of course, neither the Council or the rulers are fools enough to allow the ambassadorship to exist simply for this purpose, and they constantly bargain for punitive trade agreements and tariffs whenever Kissha tries to do anything. Still, the Conglomerate is the most recent form the Yuan-ti ambassadorship has taken, as they are periodically sentenced from the city. It remains to be seen how long it will endure.</p>
+
+<p><span style="font-style:italic">The Hidden City</span> <br />
+The Hidden City’s ambassador’s name is unknown, since he or she never leaves the compound. The Council apparently calls upon this person, said to be a highly skilled diviner, periodically to determine if there are any threats to the Hidden City’s secrecy. It seems that there must be some secret agreement between the Hidden City and Slaan’s rulers, but no one knows what it is. Those who enter the Embassy of the Hidden City never come out again.</p>
+
+<p><span style="font-style:italic">Yuhnmoag</span><br />
+The Illithid ambassador is Fyrsslaud (neuter illithid/LE). Many wonder why Slaan accepts the Illithid’s presence, until they realize a permanent and stable portal to Yuhnmoag exists within the city. While the Illithid city is hardly hospitable, the Mind Flayers there, like their spelljamming brethren, have learned to coexist in at least some fashion with other races. The Ambassador is a quiet figure, which intervenes only rarely in city politics, and spends most of his time involved in supporting an illegal slave trade. There is also a steady market, both legal and illegal, in psionic illithid items, many of which end up traveling to mineral, something that is accounted the only reason the Ambassador of Hoard hasn’t tried to bar Illithid passage through the city. Hard fought political battles have bought the Illithids that right, though very few ever exercise it, since Slaan is the site of one of their greatest failures, and few wish to see it in its current state.</p>
+
+<p><span style="text-decoration:underline">Slaan’s Religions</span></p>
+
+<p>	The Inner Planes are not the most religious of locales, least of all the Archoelemental-less para- and quasi-elemental planes. The paraelemental plane of Smoke does not have any resident gods. So a cosmopolitan and bustling place like Slaan is hardly a religious stronghold. Still, no one would deny the Powers the right to gather worshippers here, and the permanent residents have their gods to look up to, so religious influence is present and must be taken into account.</p>
+
+<p>	Since the Inner Planes have a relative dearth of gods, and the resident races tend to share commonalities of culture the number of resident religions in Slaan is quite small. There are only a few major openly worshipped churches, and only three underground faiths.</p>
+
+<p><span style="text-decoration:underline">The Open Churches</span> </p>
+
+<p>These faiths are based both in the Bogs and the Mouth, and display their trappings openly to the public of the city. They can exert quite a bit of power in city politics on certain issues, especially if they can rally any significant portion of the populace behind them. These faiths are generally rather neutral and non-polarized powers, a fact which helps to reduce tension in the city.</p>
+
+<p><span style="font-style:italic">The Draconic Pantheon</span><br />
+ <br />
+Slaan’s most powerful churches belong to the servants of the ancient dragon gods, a fact that never ceases to surprise visitors to the city. However, this is often a surprise that does not consider that the first language of the city is draconic, and that many of the resident reptilian races have no gods of their own, or only the weakest and least interested of gods. The dragon gods are ancient and powerful, and worshipped in a more proactive fashion here. They are also linked closely with the mighty centers of their faith in the Dragon city of Hoard. The Burning Desert lizards especially hold these mighty and aloof powers as their patrons, but even the Khaasta appreciate their strength and directness. The churches themselves are not very proactive, since Io and Chronepsis represent the strength of this pantheon, and are the most commonly worshipped deities, but these are powers concerned with the nature and fate of the world, and that their followers should find a place in it. These churches get along well with the druids, the city’s next most powerful faith, and also with the Rilmani of the city. They rarely take a stand in politics unless the balance of the population is under terrible risk.</p>
+
+<p>High Priests: The high priest of Io is a half-dragon lizard man native to Slaan, Gershal Nersel (Male half-dragon (crystal) lizardfolk/Clr 16/TN) an aged personage who stands like a rock in the turbulent sea of smoke. He is concerned with the welfare of all, and that the city remain strong. His clerics preach solidarity and to guard against threats from the outside. They also say hold fast to those allies who share your blood or have proven trustworthy. The high priest of Chronepsis is not a Slaan native, but instead a Scel from a colony on Dust, Jenmos Kler (Male Scel/Clr 15 Hier 2/TN) his faith is one of watchfulness and quiet concern. The judgment of souls comes at the end of life, and one should live in acceptance and preparation for this fate. The clerics of Chronepsis have only one enemy, the Cult of the Reaver Falazure, who threatens the continuity of all that is, and they work tirelessly to rid the city of that faith.</p>
+
+<p>Temple: The House of Dragonkind is a wide and grand temple in the Mouth, while the smaller, but still large All Scales Stand is located in the Bogs. Both temples can hold thousands of worshippers, and will be filled to capacity at important ceremonies, mostly the deaths of key city figures, or celebrations of major victories for Slaan. The temples are constructed in a swirled tower style imported from Hoard, and were constructed with the aid of mighty elementals and dragons.</p>
+
+<p><span style="font-style:italic">The Druids</span><br />
+ <br />
+While the druids lack the powerful support and potency of the dragon gods, their faith is most prevalent in Slaan, found among all populations and races, from the most pitiful of Kobolds to the richest Elgar duelists. The Inner Planes are natural in their way, and the druids appreciate and respond to the natural balance of Smoke. There is faith to build upon here, especially among the many farmers of the cities outside, and among the Pogdrac, a people who have a tremendous number of druids among them. The compassionate philosophical balance preached and practiced by the Pogdrac clergy, and other druids have made them popular with the people, even those who do not follow nature’s way. Their dominance over the Ministry of Religion is secure as well, and supports the druids amiably. Secure in this prevalent position the druids take few actions within the city, but they hold the city stable against the sort of sweeping religious trends common in many other places on the planes. By being balanced they prevent radicalism.</p>
+
+<p>High Priest: The Archdruid of Slaan is a Pogdrac woman, Rela (Female Pogdrac/Dru 15/TN). The vast majority of the city’s druids are also neutral, and many of them are Pogdrac, though lizardmen, troglodytes, Moloch’Phrynn, Dact, and other races are also common. The druids work quietly in the city, aiding the farmers, the minister of water, and generally looking out for the people’s health as much as possible. Many leave the city frequently, mindful that it is artificial. They also attempt to keep open ties with Smoke’s Ruvoka when at all possible.</p>
+
+<p>Temple: The druids have no temple, though they have constructed a ‘temporary’ (despite being thousands of years old) grove in the Desert layer, as far from traffic as possible. Their faith is generally highly dispersed, and druids travel throughout the city.</p>
+
+<p><span style="font-style:italic">Ptah ‘Opener of the Way’</span> </p>
+
+<p>The Ethereal God Ptah is commonly called a ‘planewalker’s god’ and indeed the Opener is well suited as a guide and light in dark places, to open doors to new corners of the multiverse. Popular with those who pass through Slaan regularly, and especially with Etherfarer traders, Ptah has a smaller following among the permanent residents. While the Egyptian god is far too restrained to try and poach worshippers from the other faiths of Slaan, the power is not unwilling to try and increase his following. As more and more beings travel the Inner Planes he believes he might build a power base there and stop being such a neglected, forgotten god. Ptah is most popular among the non-reptilian residents of Slaan.</p>
+
+<p>High Priest: Lady Hala Brightglaze (female aasimar/Clr 13/LN) is the leading opener of Ptah in Slaan. Her number of subordinates is quite small, and includes a group of nathri siblings who all work as priests of Ptah. The priests and other temple folk keep mostly to the Mouth, but their opinions and attitudes serve as a good gauge on the opinions of planewalkers in the city there.</p>
+
+<p>Temple: The Open Door is a small temple with a great hall with large windows designed to magnify Slaan’s dim light as much as possible, and with many magical lighting devices as well, located in the Mouth. It cannot hold any large congregation, not more than several hundred at best, and has only a few other antechambers. It abuts the temple of Lao Tzu.</p>
+
+<p><span style="font-style:italic">Semuanya</span> </p>
+
+<p>In a city of lizardmen one might expect that their creator god would be among the most powerful of faiths, and worshipped with great fervor. This is not the case in Slaan. Semuanya, creator of lizardmen and god of survival has only a slim following here, one that fades more and more as years pass. Distant, uncaring, and far too primal for these educated and successful lizardmen, the survival god has fallen from favor and been replaced by druidic nature worship and the dragon gods. Nevertheless, a number of lizardmen, particularly the city’s poor and destitute, will worship him, hoping for an aid in the struggle of life. This faith is also relatively strong among Helod and Elgar, who prefer the more savage Semuanya over the sophisticated dragon gods, and view all life as a struggle.</p>
+
+<p>High Priest: Greal (female lizardman/Clr 15 Hier 4/TN) is an extremely powerful priest of Semuanya from the prime material. She has been on the planes for several years but settled only recently in Slaan. Her faith in the god of survival is incredibly strong and she outranks all her subordinates greatly. The Helod and Elgar love her for her hash view on life and her “one step from desperation” speeches. Her leadership has not increased the faithful in number precisely, but has increased their fervor greatly. Greal is the most powerful cleric in the city, which makes her a strange sight to many.</p>
+
+<p>Temple: The Bog Cathedral is located as close to the center of the Bogs as possible, among great municipal buildings. It is a great artificial bog enclosed within stone. It was built long ago, perhaps even in the original settlement of the city, and could easily hold ten thousand within its bubbly confines, though few beyond lizardmen are comfortable in the ankle deep water and sludge.</p>
+
+<p><span style="font-style:italic">Lao Tzu</span><br />
+ <br />
+This Chinese god of mystic insight who resides in the Ethereal has a small, but not insignificant following in Slaan. Affiliated with nature as well, the god has a following among mindful planewalkers and certain races such as the Dact and Moloch’Phryn. A reclusive god, like all the Chinese powers, this member of the celestial bureaucracy has only slender ties to Slaan, but his faith can occasionally step in to settle disputes of a magical nature, and many judges of mystic duels consult with the priests of this faith. A few of Slaan’s more powerful wizards are also members of this faith, since no other god of magic has real presence here.</p>
+
+<p>High Priest: Herest the Quiet (male Moloch’Phryn/Clr 12/LN) is the high priest of Lao Tzu, and is renowned for speaking as little as once a week, and rarely saying more than is absolutely necessary. His clergy consists of only one intermediate ranked priest and four other initiates, all of whom are human. They rarely intervene in outside affairs, as they struggle to keep their small faith stable.</p>
+
+<p>Temple: The Chamber of Contemplation is really nothing more than a single room; the priests must rent lodging elsewhere. The room is kept quiet and open, and is designed to hold only a few dozen in spaced floor spaces and alcoves, where they can contemplate the multiverse and seek insight.</p>
+
+<p><span style="font-style:italic">Laogzed</span><br />
+ <br />
+The great eater, the demigod of the troglodytes can be considered to have not so much a faith as a hold on the troglodytes of the city. The city has not banished worship of the eater because in the past when they did so many troglodytes flocked to the worship of Falazure instead. Instead, worship and ceremonies to the all-consuming hunger go on in the depths of the warrens, where the troglodytes eat the city’s dead to bring themselves power. It is unsavory in the extreme, but worship is ostracized and common among only the poorest of the troglodytes even there. Only troglodytes and kobolds worship Laogzed, and only when they retreat out of site of others. This god has suffered from a long slow loss of worshippers to the druids, much as Kurtulmak of the kobolds did previously (the kobold god is no longer worshipped in Slaan). It seems that eventually the worship of Laogzed shall go the same way, but for now the faith represents a danger for those few who venture into the Warrens of Slaan.</p>
+
+<p>High Priest: The worship of Laogzed is not nearly so organized to have any leadership. Those few adepts and shamans who cast his spells and praise his name roam about in the Warrens searching for sacrifices and food. They rarely get along, and try to keep worshippers to themselves.</p>
+
+<p>Temple: There is no organized site of worship for Laogzed, though several of the larger troglodyte caverns have shrines in his honor.</p>
+
+<p><span style="text-decoration:underline">The Hidden Faiths</span></p>
+
+<p>These cults are banned by the City Council and condemned by all upstanding citizens of Slaan. They are dark whispers that work to destabilize the city from the shadows and are a threat to all who wish to live in the city. Membership in any of these cults is punishable by years of hard labor, and active participation in cult rituals by death. Anyone even suspected of cult membership will face duel challenges from almost anyone they know. Nevertheless, these Cults never go away, indeed, they often grow to great heights of manipulative power until they over reach their bounds and are driven into hiding once again. These cults generally make it a practice not to fight amongst themselves. This is not to say they are allies, but they recognize that they have too many enemies to combat each other.</p>
+
+<p><span style="font-style:italic">Falazure “Reaver”</span></p>
+
+<p>The most powerful and oldest of the evil cults of Slaan is the most feared the worship of the undead dragon Reaver, Falazure, he who eats dragon souls. His promise of foul powers and eternity through undeath appeals to many. Those who do not follow the Reaver of their own will are cowed to serve him through fear or force. The night dragon’s power has grown through recent millennia, enough that the Church of Chronepsis is forced to consider him a tremendous threat to the continuity of the draconic life cycle. In the city of Slaan the cultists meet in dark places and sacrifice those they can lay their hands on, animating them as horrible undead servants, which they use to increase their own power. The Cult has followers among all races, but is particularly popular among the more brutal Troglodytes, Helods, Mon’Varan, and Elgar, who consider the offer to escape life’s struggles a great reward. The Cultists of Falazure have links to the many criminal enterprises of Slaan, and many of its darkest practices have them at the source.</p>
+
+<p>High Priest: The current High Priest of Falazure in Slaan is Raslay (female half-shadow dragon human/Clr 16/Hr 1/NE) a dark and villainous woman who has positioned herself solidly in charge of the faith there. All the humanoid members of the Cult know the absoluteness of her will. She is not native to Slaan, but has lived there for many years now. She never leaves the Warrens unless she must, for her half-shadow dragon heritage is suspicious. She is said to consider Falazure the parent she never had, and is rather unstable. She is shrewd and vicious however, and possesses a frightening charisma that has drawn many to the Reaver’s worship.</p>
+
+<p>Temple: The Mausoleum of Black Vapors is a mobile temple constructed of illusions and magic that forms up in darkness in the Warrens once each week. Its size and location changes regularly, but the Cultists seem to always be able to find the place. Those who do not follow the Reaver can find little more than the destruction of their souls should they happen upon it.</p>
+
+<p><span style="font-style:italic">Merrshaulk</span> </p>
+
+<p>Those of the serpent people who live in the city, and those who they have managed to bind into their servitude revere the snake god of the Yuan-ti. Though this faith is not numerous, and few of the Yuant-ti and their poor thralls are priests, the dark god has a foothold here. This poisonous god has tried to lure many of the Helod to his service, and has managed to position his servants in key positions in the slave and drug trades of Slaan. This goes so far in the slave trade that Yuan-ti influence blends in with the proxies of the Dao so closely that it cannot be determined which masters many of the Slavers serve. The faith is only loosely united at best, with many of the followers serving Merrshaulk only for their own purposes and unwilling to advance the cause of the Yuan-ti as a whole. However, the faith is a cornerstone of periodic Yuan-ti efforts to insert their servants into the city in numbers and take possession of pieces of it by force.</p>
+
+<p>High Priest: The greatest secret of the faith of Merrshaulk is that the secretary to the Yuan-ti ambassador is their high priest. This man, a pureblood Yuan-ti named Frossha (Male Pureblood Yuan-ti/Clr 12/LE) is among the few purebloods to rise so high, and only does so because no abomination could move freely in the city. Frossha is cunning and keeps most of his activities extremely hidden. Not even the ambassador knows his true identity.</p>
+
+<p>Temple: The Yuan-ti have no temples or shrines, but hold their secret meetings in all sorts of hidden places. The mobile slave market of the Warrens is one of the most common and secure for them, so they tend to hold large meetings there. They may also occupy a shrine of Laogzed for their rituals if they can persuade the troglodyte priests.</p>
+
+<p><span style="font-style:italic">Sess’innek</span></p>
+
+<p>Last and least of the cults of Slaan is that of the Abyssal lord Sess’innek. Worshipped only by the most depraved and power-hungry of the lizard men, the cult is tiny and its power limited. There are no lizard kings in the city, so no one can take charge of the worship. Nevertheless, there are lizard men who hear the Abyssal lord’s dark voice and bring forth domination and destruction in his name. The cult’s activities are almost always on an individual level, or at most a few comrades. However, they can engage in tremendous blazes of destruction when they wish, wielding the unstable powers they have been given. While this is the least dangerous cult in the city, it is the most hated and the most watched for, any indication of either a lizard king sneaking into the city, or of a true gathering of the servants of Sess’innek is ruthlessly put down. This cult’s chief goal, beyond its own survival, is finding a way to corrupt the Xantu, and seize the city through its greatest opening. Thankfully, this seems a highly unlikely prospect.</p>
+
+<p>High Priest: This group is far too individualized to follow any single leader, and standing among them is determined only by personal power, usually through secret duels.</p>
+
+<p>Temple: Nothing physical exists in the Abyssal Lord’s name, the watch is too tight, and the servants to few to have even household shrines.</p>
+
+<p><span style="text-decoration:underline">Slaan’s Criminal Element</span></p>
+
+<p>	The city of Slaan has, like all cities of any size, a number of people and organizations that make their living on the wrong side of the law. However, this city is not a city of humans, or even close to humans, and so those who engage in what Sigilians refer to as “the cross-trade” are rather a bit different than in other places. First, there are two types of crime in Slaan, the type that affects reptiles, and the type that doesn’t. There are also rather special circumstances caused by the existence of the Xantu, as that race effects the politics of criminality greatly. Other aspects of Slaan, such as the unusual nature of its militia, populace, and its dueling arenas, also change the criminal composite from what you might see in other planar metropolises.</p>
+
+<p>	This is not to say that the city’s criminals are not without power, indeed they can wield a great deal of influence behind the back of the law, especially in the Mouth, where there is a majority of outsiders. Many criminal groups also have links with the darker faiths of Slaan, and in some cases members of the city council, such as the minister of Trade. With the exception of the watery depths, where the rules of Opolin are iron clad, there is some criminal element everywhere in Slaan, and it cannot be ignored when determining the policies of the city.<br />
+	<br />
+<span style="text-decoration:underline">The Greater Proscriptions</span></p>
+
+<p>	All aspects of crime in Slaan are affected by a few certain proscriptions. One is that there is no crime among the water militia and the other custodians of the depths. Another is that the rulers absolutely refuse to tolerate any criminal ploys that jeopardize Slaan’s food supply, and therefore the farmers are safe in their fields. The largest proscription, however, is that no one may poach upon the turf of the Xantu. That race holds itself the sole master of certain criminal policies and anyone trying to usurp their role will be horribly exterminated, without exception. The most notable proscription of the Xantu is assassination. They are the only killers in Slaan, and while they may be approached with a request, that race only takes jobs when it wishes and determines things are in its own best interest. Anyone else who kills another in cold blood in Slaan is caught in a race between the Xantu and the militia to string them up first. This rule has broad ramifications, as no one is sure just what types of killing are allowed in Slaan. As such, armed robberies and muggings are carefully planned and less often seen, since this might be considered assassination. Of course, once the prey actually fights back it’s another story, and most of the residents of Slaan fight back.</p>
+
+<p><span style="text-decoration:underline">Criminal Organization</span></p>
+
+<p>	Much like in any great city the vast majority of crime in Slaan is the province of the individual, thieves, cutpurses, knights-of-the-post, blackmailers, spies, snake oil salesmen, and all such. Anyone could be a criminal worker, though thievery as a discipline has a large dose of Dact members, but then there are also a large number of Dact who work as counter thieves.</p>
+
+<p>	Yet, while the majority of the crime happens on a small, individualized scale or at the most a small band of a few, there is an organization to the crime. Slaan has two great criminal trades that have opposed organization upon their darker element. The first of these is body snatching, either for food or slaves. The second is cheating duels. In addition to these, the dark arts and rituals of the worshippers of Slaan’s foul cults have their own organization and their own enterprises. Into the mix of this business two groups have emerged as the criminal leaders of Slaan, the Dark Glass Thieves Guild and the Yuan-ti (who may be followers of Mershaulk). </p>
+
+<p><span style="text-decoration:underline">Body-Snatching</span></p>
+
+<p>	Stealing bodies is a form of thievery, and one conducted in Slaan primarily by those who serve the Yuan-ti, who in turn tend to follow the commands of the Dao, but only for a profit. The lizard people have their own ends. Yuan-ti organization is generally cellular, and loosely arranged around the followers of Mershaulk, their sleeping god. The Yuan-to keep most of their criminal tries with kobolds (who serve as spies) and troglodytes (who do most of the actual work). They also subordinate whomever they can, whether corrupting Khaasta police and Ipsosaur guides, or cajoling half-dragons to work as enforcers. Their organization is quite loose, mostly a network of secretly maintained and patrolled pickup points and drop points for the bodies, all connected to the mobile slave market in the Warrens where the captured eventually end up. From there the Yuan-ti must either corrupt and force their way through a gate (something they do only rarely) or magically transport their slaves outside the city to Dao buyers. They will sell primarily to the Dao, but let the Efreet and anyone else who can put in a good bid have their chance as well, since driving up the bidding only increases their profits.</p>
+
+<p>	The greatest obstacle to the Yuan-ti’s efforts are the workings of the Order of the Broken Chains, who lead strikes into the Warrens searching for the slave market, and make sure the gates are patrolled and teleportation magic watched for. This can be a source of great difficulty, but the raw backing power of the Dao, and the Yuan-ti’s superior numbers and cunning give them an advantage. They are also aided heavily by a complication. In Slaan troglodytes steal people off the streets all the time, mostly to eat them in their constant hunger. The Khaasta patrollers don’t consider it their responsibility to deal with this. That a fraction of the abducted are actually taken as slaves does not escape them, but the Yuan-ti hide behind more routine captures and make the work far more difficult. It’s difficult to differentiate between the missing and the dead in a city where corpses are consumed.</p>
+
+<p>	The Yuan-ti sell any slaves that they captured but who later turn out unsuitable to the Cultists of Falazure to be sacrificed, they dislike loosing profits in this way, but consider it more cost effective than trying to break an obstinate captive. They rarely resort to this with outsiders, but natives captured by them often have enough hatred to force such ends.</p>
+
+<p><span style="text-decoration:underline">Cheating the Duels</span></p>
+
+<p>	Every member of the Dark Glass thieves’ guild is gambling with their very life in the most serious of ways. Corrupting the duels of Slaan is something the rulers despise, and getting discovered results in a short trip to put your throat to a Xantu knife. Therefore the guild survives on rules of nearly absolute secrecy, and it is something of a task to even approach them ask for their aid. The prices they charge are outrageous, extortionist, and grow exponentially as the duel is more notable. However, they can contact a network of corrupt officials and referees to allow sneaking in the most unassuming of poisons, sliding a spell past the watchers and protections, even providing enough trickery to allow someone to switch places with an actual duelist.</p>
+
+<p>	This sort of work is only a part of what the guild undertakes of course, common thievery and extortion is their bread and butter, and they tend to have a highly equitable exchange worked out to rob someone blind and leave the body where they know it’ll get picked up. Their greatest profits come from cheating the duels, however, and there is no depth to which some hopeful duelists will sink. The Dark Glass is most commonly employed when one of the very rich residents accepts a punitive duel, or continuously by a rich fake on the champion’s circuit.</p>
+
+<p>	The guild has suffered some setbacks of late. Six months ago the dueling minister, an Elgar who had been willing to overlook their activities and even allow them some known corrupt officials had given them a pretty free run of the situation. They had worked a corrupt fighter almost to the rank of Champion and were hoping to extort a tremendous amount on the betting on such a fight when disaster struck. The Minister was exposed (the Guild is still trying to determine who sold them out) and the Xantu assassin who hunted him down ended up the new minister. Of course, Nil doesn’t do anything, leaving Viriom, who long ago proved utterly incorruptible in charge. In addition, many of their old contacts in the Minstry have gone quiet in fear, and the Xantu killed some of their own members in the backlash that followed the Minster’s death. The Dark Glass is lying low for now, and trying to rebuild their contracts and agents. They hope that they can corrupt any impressive new foreigners who take a shot at the amateur’s circuit.</p>
+
+<p>	Members of the guild are complete unknowns, they don’t reveal their identities even to each, and meet always behind masks of dark glass so they cannot be seen and their voices are obscured. It is assumed the membership is small, but that it includes Elgar, Dact, and Helod. There is suspicion that the guild’s leader, known as the Black Lens, is a rogue Xantu who has parted ways with his people.</p>   </div>
+
+  <div class="links">
+  <ul class="links inline"><li style="display:none;" class="comment_forbidden first" style="display:none;"><span><a href="user/login?destination=node%2F10358%23comment-form">Login</a> or <a href="user/register?destination=node%2F10358%23comment-form">register</a> to post comments</span></li>
+<li class="statistics_counter last"><span>945 reads</span></li>
+</ul>  </div>
+    
+</div></div> <!-- /node-inner, /node -->
+
+<div id="forum-comments" class="en">
+  <a id="comment-61880"></a>
+
+    
+
+<div id="post-61880" class="forum-post clear-block posted-by-436 comment comment-published odd first last">
+  <div class="forum-post-info clear-block">
+    <div class="forum-posted-on">
+      Wed, 2011-01-19 15:41
+          </div>
+
+    
+        
+    <span class="forum-post-number"><a href="091006/slaan-part-2-how-slaan-runs_.html#comment-61880" class="active">#2</a></span>
+  </div> 
+  <div class="forum-post-wrapper">
+    <div class="forum-post-panel-sub">
+              
+
+<div class="author-pane">
+ <div class="author-pane-inner">
+        <div class="author-pane-section author-pane-general">
+            <div class="author-pane-line author-name">
+        <a href="users/ripvanwormer_.html" title="View user profile.">ripvanwormer</a>      </div>
+
+                    
+  <div class="picture">
+          <img src="sites/files/icons/generic.jpg" alt="ripvanwormer&#039;s picture" title="ripvanwormer&#039;s picture"  />      </div>
+      
+                    <div class="author-pane-line author-offline">
+           Offline        </div>
+      
+                    <div class="author-pane-line author-title">
+          Factol        </div>
+      
+            
+            
+                    <div class="author-pane-line author-joined">
+          <span class="author-pane-label">Joined:</span> 2004-10-05         </div>
+      
+            
+                </div>
+
+        <div class="author-pane-section author-pane-contact">
+            
+            
+            
+                </div>
+
+        <div class="author-pane-section author-pane-admin">
+            
+          
+               </div>
+  </div>
+</div>
+          </div>
+
+    <div class="forum-post-panel-main clear-block">
+              <div class="forum-post-title">
+          Re: Slaan: Part 2 - How Slaan Runs        </div>
+      
+      <div class="forum-post-content">
+         <p>I didn't know there was a part 2 of this! I think it got buried and never appeared on the front page. It's excellent work, of course, and I'm mainly commenting to bump it up and give it some more attention.</p> <div class="dice_rolls">
+</div>      </div>
+
+      
+          </div>
+  </div> 
+  <div class="forum-post-footer clear-block">
+    <div class="forum-jump-links">
+      
+    </div>
+
+          <div class="forum-post-links">
+        <ul class="links"><li style="display:none;" class="comment_forbidden first last"><span><a href="user/login?destination=node%2F10358%23comment-form">Login</a> or <a href="user/register?destination=node%2F10358%23comment-form">register</a> to post comments</span></li>
+</ul>      </div>
+      </div> </div> 
+    </div>
+        </div>
+
+                
+        
+      </div> <!-- /#content-inner -->
+
+</div></div></div></div>
+</div></div></div></div>
+
+      </div> <!-- /#content -->
+      
+
+              <div id="sidebar-left"><div id="sidebar-left-inner">
+          
+<div id="block-menu-menu-directories" class="block block-menu region-odd odd region-count-1 count-1 directories odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        <h2 class="title">Directories</h2>
+      
+  <div class="content">
+    <ul class="menu"><li class="leaf first dhtml-menu "><a href="wiki_index_.html" title="" id="dhtml_menu-682">Wiki Index</a></li>
+<li class="leaf last dhtml-menu "><a href="article_index_.html" title="Article Index" id="dhtml_menu-777">Article Index</a></li>
+</ul>  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-faceted_search_ui-1_keyword" class="block block-faceted_search_ui region-even even region-count-2 count-2 fwdc-collapse even">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+  <div class="fwdc-block-close">    </div>  
+  <div class="content">
+    <form action="/091006/slaan-part-2-how-slaan-runs"  accept-charset="UTF-8" method="post" id="faceted-search-ui-form-1" style="display:none;" style="display:none;">
+<div><div class="form-item" id="edit-keywords-wrapper">
+ <input type="text" maxlength="255" name="keywords" id="edit-keywords" size="20" value="" alt="Keywords" class="form-text" />
+</div>
+<input type="hidden" name="stage" id="edit-stage" value="results"  />
+<input type="hidden" name="facet-key" id="edit-facet-key" value=""  />
+<input type="hidden" name="facet-id" id="edit-facet-id" value=""  />
+<input type="hidden" name="facet-sort" id="edit-facet-sort" value=""  />
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<a href="faceted_search/_.html" class="faceted-search-more">More options</a><input type="hidden" name="form_build_id" id="form-LNiTJ4YlO6dYTpEy8UzFa400TKzHnC1OuSSEWpMZgOg" value="form-LNiTJ4YlO6dYTpEy8UzFa400TKzHnC1OuSSEWpMZgOg"  />
+<input type="hidden" name="form_id" id="edit-faceted-search-ui-form-1" value="faceted_search_ui_form_1"  />
+
+</div></form>
+  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-node-0" class="block block-node region-odd odd region-count-3 count-3  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        
+  <div class="content">
+      </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-faceted_search_ui-1_related" class="block block-faceted_search_ui region-even even region-count-4 count-4 razorvine fwdc-collapse even">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+  <div class="fwdc-block-close">      <h2 class="title">Related categories</h2>
+    </div>  
+  <div class="content">
+    <div class="faceted-search-facet faceted-search-env-faceted_search faceted-search-facet--taxonomy--4 faceted-search-facet-inactive faceted-search-related"><h3>Planar Locations</h3>: <a href="faceted_search/results/taxonomy%3A40_.html">Inner</a> &raquo; <a href="faceted_search/results/taxonomy%3A40.53_.html">Smoke</a></div>
+<div class="faceted-search-facet faceted-search-env-faceted_search faceted-search-facet--taxonomy--3 faceted-search-facet-inactive faceted-search-related"><h3>Type</h3>: <a href="faceted_search/results/taxonomy%3A21_.html">Location</a></div>
+<div class="faceted-search-facet faceted-search-env-faceted_search faceted-search-facet--author--1 faceted-search-facet-inactive faceted-search-related"><h3>Author</h3>: <a href="faceted_search/results/author%3A166_.html">Mechalich</a></div>
+<div class="faceted-search-facet faceted-search-env-faceted_search faceted-search-facet--content_type--1 faceted-search-facet-inactive faceted-search-related"><h3>Content type</h3>: <a href="faceted_search/results/content_type%3Astory_.html">Article</a></div>
+  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-taxonomy_navigation-block_1" class="block block-views region-odd odd region-count-5 count-5  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        <h2 class="title">The Planes</h2>
+      
+  <div class="content">
+    <div class="view view-taxonomy-navigation view-id-taxonomy_navigation view-display-id-block_1 ">
+    
+  
+  
+      <div class="view-content">
+      <form action="/"  accept-charset="UTF-8" method="post" id="ctools-jump-menu">
+<div><div class="container-inline"><div class="form-item" id="edit-jump-wrapper">
+ <select name="jump" class="form-select ctools-jump-menu-select" id="edit-jump" ><option value="" selected="selected">- Choose -</option><option value="taxonomy/term/81_.html">  
+  
+                Abellio
+  
+</option><option value="taxonomy/term/70_.html">  
+  
+                Abyss
+  
+</option><option value="taxonomy/term/71_.html">  
+  
+                Acheron
+  
+</option><option value="taxonomy/term/106_.html">  
+  
+                Agathys
+  
+</option><option value="taxonomy/term/41_.html">  
+  
+                Air
+  
+</option><option value="taxonomy/term/108_.html">  
+  
+                Amoria
+  
+</option><option value="taxonomy/term/78_.html">  
+  
+                Aquallor
+  
+</option><option value="taxonomy/term/76_.html">  
+  
+                Arborea
+  
+</option><option value="taxonomy/term/80_.html">  
+  
+                Arcadia
+  
+</option><option value="taxonomy/term/77_.html">  
+  
+                Arvandor
+  
+</option><option value="taxonomy/term/42_.html">  
+  
+                Ash
+  
+</option><option value="taxonomy/term/60_.html">  
+  
+                Astral
+  
+</option><option value="taxonomy/term/136_.html">  
+  
+                Automata
+  
+</option><option value="taxonomy/term/72_.html">  
+  
+                Avalas
+  
+</option><option value="taxonomy/term/85_.html">  
+  
+                Avernus
+  
+</option><option value="taxonomy/term/83_.html">  
+  
+                Baator
+  
+</option><option value="taxonomy/term/93_.html">  
+  
+                Beastlands
+  
+</option><option value="taxonomy/term/137_.html">  
+  
+                Bedlam
+  
+</option><option value="taxonomy/term/110_.html">  
+  
+                Belierin
+  
+</option><option value="taxonomy/term/138_.html">  
+  
+                Blight
+  
+</option><option value="taxonomy/term/95_.html">  
+  
+                Brux
+  
+</option><option value="taxonomy/term/82_.html">  
+  
+                Buxenus
+  
+</option><option value="taxonomy/term/97_.html">  
+  
+                Bytopia
+  
+</option><option value="taxonomy/term/92_.html">  
+  
+                Cania
+  
+</option><option value="taxonomy/term/100_.html">  
+  
+                Carceri
+  
+</option><option value="taxonomy/term/102_.html">  
+  
+                Cathrys
+  
+</option><option value="taxonomy/term/114_.html">  
+  
+                Chamada
+  
+</option><option value="taxonomy/term/130_.html">  
+  
+                Chronias
+  
+</option><option value="taxonomy/term/104_.html">  
+  
+                Colothys
+  
+</option><option value="taxonomy/term/140_.html">  
+  
+                Curst
+  
+</option><option value="taxonomy/term/65_.html">  
+  
+                Cyberspace
+  
+</option><option value="taxonomy/term/86_.html">  
+  
+                Dis
+  
+</option><option value="taxonomy/term/98_.html">  
+  
+                Dothion
+  
+</option><option value="taxonomy/term/43_.html">  
+  
+                Dust
+  
+</option><option value="taxonomy/term/44_.html">  
+  
+                Earth
+  
+</option><option value="taxonomy/term/141_.html">  
+  
+                Ecstasy
+  
+</option><option value="taxonomy/term/107_.html">  
+  
+                Elysium
+  
+</option><option value="taxonomy/term/109_.html">  
+  
+                Eronia
+  
+</option><option value="taxonomy/term/61_.html">  
+  
+                Ethereal
+  
+</option><option value="taxonomy/term/142_.html">  
+  
+                Excelsior
+  
+</option><option value="taxonomy/term/143_.html">  
+  
+                Faunel
+  
+</option><option value="taxonomy/term/45_.html">  
+  
+                Fire
+  
+</option><option value="taxonomy/term/139_.html">  
+  
+                Fortitude
+  
+</option><option value="taxonomy/term/134_.html">  
+  
+                Gatetowns
+  
+</option><option value="taxonomy/term/112_.html">  
+  
+                Gehenna
+  
+</option><option value="taxonomy/term/144_.html">  
+  
+                Glorium
+  
+</option><option value="taxonomy/term/117_.html">  
+  
+                Gray Waste (Hades)
+  
+</option><option value="taxonomy/term/67_.html">  
+  
+                Greyhawk
+  
+</option><option value="taxonomy/term/145_.html">  
+  
+                Hopeless
+  
+</option><option value="taxonomy/term/46_.html">  
+  
+                Ice
+  
+</option><option value="taxonomy/term/40_.html">  
+  
+                Inner
+  
+</option><option value="taxonomy/term/129_.html">  
+  
+                Jovar
+  
+</option><option value="taxonomy/term/96_.html">  
+  
+                Karasuthra
+  
+</option><option value="taxonomy/term/113_.html">  
+  
+                Khalas
+  
+</option><option value="taxonomy/term/116_.html">  
+  
+                Krangath
+  
+</option><option value="taxonomy/term/94_.html">  
+  
+                Krigala
+  
+</option><option value="taxonomy/term/47_.html">  
+  
+                Lightning
+  
+</option><option value="taxonomy/term/121_.html">  
+  
+                Limbo
+  
+</option><option value="taxonomy/term/124_.html">  
+  
+                Lunia
+  
+</option><option value="taxonomy/term/48_.html">  
+  
+                Magma
+  
+</option><option value="taxonomy/term/91_.html">  
+  
+                Maladomini
+  
+</option><option value="taxonomy/term/90_.html">  
+  
+                Malbolge
+  
+</option><option value="taxonomy/term/122_.html">  
+  
+                Mechanus
+  
+</option><option value="taxonomy/term/125_.html">  
+  
+                Mercuria
+  
+</option><option value="taxonomy/term/128_.html">  
+  
+                Mertion
+  
+</option><option value="taxonomy/term/87_.html">  
+  
+                Minauros
+  
+</option><option value="taxonomy/term/49_.html">  
+  
+                Mineral
+  
+</option><option value="taxonomy/term/103_.html">  
+  
+                Minethys
+  
+</option><option value="taxonomy/term/123_.html">  
+  
+                Mt. Celestia
+  
+</option><option value="taxonomy/term/115_.html">  
+  
+                Mungoth
+  
+</option><option value="taxonomy/term/58_.html">  
+  
+                Negative
+  
+</option><option value="taxonomy/term/84_.html">  
+  
+                Nessus
+  
+</option><option value="taxonomy/term/119_.html">  
+  
+                Niflheim
+  
+</option><option value="taxonomy/term/75_.html">  
+  
+                Ocanthus
+  
+</option><option value="taxonomy/term/118_.html">  
+  
+                Oinos
+  
+</option><option value="taxonomy/term/50_.html">  
+  
+                Ooze
+  
+</option><option value="taxonomy/term/62_.html">  
+  
+                Ordial
+  
+</option><option value="taxonomy/term/101_.html">  
+  
+                Othrys
+  
+</option><option value="taxonomy/term/69_.html">  
+  
+                Outer
+  
+</option><option value="taxonomy/term/131_.html">  
+  
+                Outlands
+  
+</option><option value="taxonomy/term/79_.html">  
+  
+                Pelion/Mithardir
+  
+</option><option value="taxonomy/term/88_.html">  
+  
+                Phlegethos
+  
+</option><option value="taxonomy/term/135_.html">  
+  
+                Plague-mort
+  
+</option><option value="taxonomy/term/120_.html">  
+  
+                Pluton
+  
+</option><option value="taxonomy/term/105_.html">  
+  
+                Porphatys
+  
+</option><option value="taxonomy/term/57_.html">  
+  
+                Positive
+  
+</option><option value="taxonomy/term/66_.html">  
+  
+                Prime Material
+  
+</option><option value="taxonomy/term/63_.html">  
+  
+                Psuedo-Planes
+  
+</option><option value="taxonomy/term/51_.html">  
+  
+                Radiance
+  
+</option><option value="taxonomy/term/146_.html">  
+  
+                Ribcage
+  
+</option><option value="taxonomy/term/147_.html">  
+  
+                Rigus
+  
+</option><option value="taxonomy/term/52_.html">  
+  
+                Salt
+  
+</option><option value="taxonomy/term/64_.html">  
+  
+                Shadow
+  
+</option><option value="taxonomy/term/99_.html">  
+  
+                Shurrock
+  
+</option><option value="taxonomy/term/133_.html">  
+  
+                Sigil
+  
+</option><option value="taxonomy/term/53_.html">  
+  
+                Smoke
+  
+</option><option value="taxonomy/term/127_.html">  
+  
+                Solania
+  
+</option><option value="taxonomy/term/54_.html">  
+  
+                Steam
+  
+</option><option value="taxonomy/term/89_.html">  
+  
+                Stygia
+  
+</option><option value="taxonomy/term/148_.html">  
+  
+                Sylvania
+  
+</option><option value="taxonomy/term/111_.html">  
+  
+                Thalasia
+  
+</option><option value="taxonomy/term/132_.html">  
+  
+                The Spire
+  
+</option><option value="taxonomy/term/73_.html">  
+  
+                Thuldanin
+  
+</option><option value="taxonomy/term/74_.html">  
+  
+                Tintibulus
+  
+</option><option value="taxonomy/term/149_.html">  
+  
+                Torch
+  
+</option><option value="taxonomy/term/68_.html">  
+  
+                Torril/Faerun
+  
+</option><option value="taxonomy/term/59_.html">  
+  
+                Transitive
+  
+</option><option value="taxonomy/term/55_.html">  
+  
+                Vacuum
+  
+</option><option value="taxonomy/term/126_.html">  
+  
+                Venya
+  
+</option><option value="taxonomy/term/56_.html">  
+  
+                Water
+  
+</option><option value="taxonomy/term/404_.html">  
+  
+                The Planes
+  
+</option></select>
+</div>
+<input type="submit" name="op" id="edit-go" value="Go"  class="form-submit ctools-jump-menu-button" />
+</div><input type="hidden" name="form_build_id" id="form-ZzV36yebmvwvQxfVDAQC1ICrHYIWe-upWaTsAJQP3NA" value="form-ZzV36yebmvwvQxfVDAQC1ICrHYIWe-upWaTsAJQP3NA"  />
+<input type="hidden" name="form_id" id="edit-ctools-jump-menu" value="ctools_jump_menu"  />
+
+</div></form>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>   </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-taxonomy_navigation-block_2" class="block block-views region-even even region-count-6 count-6  even">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        <h2 class="title">Categories</h2>
+      
+  <div class="content">
+    <div class="view view-taxonomy-navigation view-id-taxonomy_navigation view-display-id-block_2 ">
+    
+  
+  
+      <div class="view-content">
+      <form action="/"  accept-charset="UTF-8" method="post" id="ctools-jump-menu-1">
+<div><div class="container-inline"><div class="form-item" id="edit-jump-1-wrapper">
+ <select name="jump" class="form-select ctools-jump-menu-select" id="edit-jump-1" ><option value="" selected="selected">- Choose -</option><option value="taxonomy/term/19_.html">  
+  
+                Adventure
+  
+</option><option value="taxonomy/term/18_.html">  
+  
+                Armor
+  
+</option><option value="taxonomy/term/28_.html">  
+  
+                Artifact
+  
+</option><option value="taxonomy/term/29_.html">  
+  
+                Domain
+  
+</option><option value="taxonomy/term/37_.html">  
+  
+                Faction/Sect
+  
+</option><option value="taxonomy/term/13_.html">  
+  
+                Feat
+  
+</option><option value="taxonomy/term/22_.html">  
+  
+                Fiction
+  
+</option><option value="taxonomy/term/21_.html">  
+  
+                Location
+  
+</option><option value="taxonomy/term/31_.html">  
+  
+                Magical Item
+  
+</option><option value="taxonomy/term/33_.html">  
+  
+                Magical Spell
+  
+</option><option value="taxonomy/term/20_.html">  
+  
+                Misc. Article
+  
+</option><option value="taxonomy/term/34_.html">  
+  
+                Monster
+  
+</option><option value="taxonomy/term/16_.html">  
+  
+                Nonmagical Equipment
+  
+</option><option value="taxonomy/term/14_.html">  
+  
+                NPC
+  
+</option><option value="taxonomy/term/38_.html">  
+  
+                Portal/Gate
+  
+</option><option value="taxonomy/term/30_.html">  
+  
+                Power/Diety
+  
+</option><option value="taxonomy/term/35_.html">  
+  
+                Prestige Class
+  
+</option><option value="taxonomy/term/32_.html">  
+  
+                Psionic Power
+  
+</option><option value="taxonomy/term/15_.html">  
+  
+                Race
+  
+</option><option value="taxonomy/term/12_.html">  
+  
+                Skill
+  
+</option><option value="taxonomy/term/36_.html">  
+  
+                Template
+  
+</option><option value="taxonomy/term/17_.html">  
+  
+                Weapon
+  
+</option></select>
+</div>
+<input type="submit" name="op" id="edit-go-1" value="Go"  class="form-submit ctools-jump-menu-button" />
+</div><input type="hidden" name="form_build_id" id="form-R8X-xdEtr4pwMe5VNOZwudyW3XIhhuBMfG56OsJ3BZA" value="form-R8X-xdEtr4pwMe5VNOZwudyW3XIhhuBMfG56OsJ3BZA"  />
+<input type="hidden" name="form_id" id="edit-ctools-jump-menu-1" value="ctools_jump_menu"  />
+
+</div></form>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>   </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-quotes-1" class="block block-quotes region-odd odd region-count-7 count-7  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        
+  <div class="content">
+    <div id="node-317" class="node node-teaser node-type-quotes even"><div class="node-inner">
+
+      <h2 class="title">
+      <a href="quote/080630/317_.html" title=""></a>
+    </h2>
+  
+    
+  
+  
+  <div class="content">
+    <div class="quotes-quote"> <p>Belief can shape the planes, yet we know there are conditions to be met in order to have a belief take effect. Living, dying, magic: all are manifestations of this basic principle.</p> </div><div class="quotes-author"> <p>&mdash; Hazart Tzepesh</p> </div><div class="clear-block"></div>  </div>
+
+  <div class="links">
+    </div>
+    
+</div></div> <!-- /node-inner, /node -->
+  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->        </div></div> <!-- /#sidebar-left-inner, /#sidebar-left -->
+      
+      	  
+        <div id="sidebar-gutter"><div id="sidebar-gutter-inner" class="region region-gutter">
+		  <div id="sidebar-right-expand"></div>		
+                  </div></div> <!-- /#sidebar-gutter-inner, /#sidebar-gutter --> 	  
+
+    </div></div> <!-- /#main-inner, /#main -->
+
+    <div id="footer"><div id="footer-inner">
+
+    <div id="secondary-logo"></div>
+      <div id="footer-message"></div>
+
+    </div></div> <!-- /#footer-inner, /#footer -->
+
+          <div id="closure-blocks">
+<div id="block-block-1" class="block block-block region-odd odd region-count-1 count-11  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        
+  <div class="content">
+    <div style="font-size:10px;padding-left:10px;">
+Planescape, Dungeons & Dragons, their logos, <a href="http://www.wizards.com">Wizards of the Coast</a>, and the Wizards of the Coast logo are ©2008, Wizards of the Coast, a subsidiary of Hasbro Inc. and used with permission.
+</div>
+
+<style>
+#block-quotes-1 .links{display:none;}
+</style>  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block --></div>
+    
+    
+
+  </div></div> <!-- /#page-inner, /#page -->
+
+</body>
+</html>
+<!-- Page cached by Boost at: 2014-03-24 03:18:32, expires at: 2014-03-24 04:18:32 -->

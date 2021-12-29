@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head><base href="/Users/bastlynn/Desktop/PLANEWALKER-BACKUP/mimir.planewalker.com/site/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Faceted Search: 200411 | Planewalker</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="sites/all/themes/planewalker/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="sites/default/files/css/css_8c0d8f3b8897159b93a89cd478db3cb2.css" />
+<link type="text/css" rel="stylesheet" media="print" href="sites/default/files/css/css_39b4f3ff8d72780f62c9bb21580d7359.css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="sites/all/themes/zen/zen/zen/ie.css?j" />
+<![endif]-->
+  <!--[if IE]>
+    <link rel="stylesheet" href="sites/all/themes/planewalker/ie.css" type="text/css">
+      <![endif]-->
+  <script type="text/javascript" src="sites/default/files/js/js_8e705769ed6a79e0c52074dd48909682.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "dhtmlMenu": { "siblings": "siblings", "doubleclick": "doubleclick", "slide": 0, "relativity": 0, "children": 0, "clone": 0 }, "googleanalytics": { "trackOutbound": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip" }, "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/default/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "border_size": 10, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": true, "resize_sequence": 0, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": false, "disable_resize": false, "disable_zoom": false, "force_show_nav": false, "show_caption": true, "loop_items": false, "node_link_text": "View Image Details", "node_link_target": false, "image_count": "Image !current of !total", "video_count": "Video !current of !total", "page_count": "Page !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "original", "image_node_sizes": "()", "trigger_lightbox_classes": "", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": true, "slideshow_automatic_exit": true, "show_play_pause": true, "pause_on_next_click": false, "pause_on_previous_click": true, "loop_slides": false, "iframe_width": 600, "iframe_height": 400, "iframe_border": 1, "enable_video": false } });
+//--><!]]>
+</script>
+
+	
+			<style>
+            #main-inner{padding-right:0px !important;}
+            #sidebar-right{display: none !important;}
+        </style>
+	  
+	<script type="text/javascript" src="sites/all/themes/zen/planewalker/gutter_handler.js"></script>
+
+
+
+</head>
+
+<body class="not-front not-logged-in page-faceted-search no-sidebars page-faceted-search-results-200411 section-faceted-search"><div id="page"><div id="page-inner">
+    <a name="top" id="navigation-top"></a>
+    <div id="header"><div id="header-inner" class="clear-block">
+
+              <div id="logo-title">
+
+                      <div id="logo">
+              <img src="files/planewalker_logo.gif" alt="Home" id="logo-image" />
+              <a href="_.html" title="Home" rel="home" class="logo_link"></a>
+            </div>
+          
+          
+          
+        </div> <!-- /#logo-title -->
+      
+              <div id="header-blocks">
+          
+<div id="block-menu-primary-links" class="block block-menu region-odd odd region-count-1 count-11  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        <h2 class="title">Primary links</h2>
+      
+  <div class="content">
+    <ul class="menu"><li class="leaf first no-dhtml "><a href="/sections/30-35-pscs" title="" id="dhtml_menu-278">3.0 / 3.5 PSCS</a></li>
+<li class="leaf  no-dhtml "><a href="forum_.html" title="Planewalker Forums" id="dhtml_menu-200">Forums</a></li>
+<li class="leaf  no-dhtml "><a href="wiki/grand-tour-encyclopedia_.html" title="Wiki" id="dhtml_menu-204">Wiki</a></li>
+<li class="leaf  no-dhtml "><a href="codex/planewalkers-codex_.html" title="The Planewalker&#039;s Codex" id="dhtml_menu-1037">The Codex</a></li>
+
+</ul>  </div>
+
+    
+</div></div></div></div>
+</div></div> <!-- /block-inner, /block -->        </div> <!-- /#header-blocks -->
+        
+              <div id="navbar"><div id="navbar-inner">
+
+          <a name="navigation" id="navigation"></a>
+
+          
+<div id="block-menu-secondary-links" class="block block-menu region-odd even region-count-1 count-8  odd">
+<div class="block-inner">
+<div id="block-container-sides"><div id="block-container-top"><div id="block-container-bottom"><div id="block-container">
+
+        <h2 class="title">Secondary links</h2>
+      
+  <div class="content">
+    <ul class="menu"><li class="expanded first dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-619">Campaign Setting</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="sections/30-35-pscs_.html" title="" id="dhtml_menu-272">3.0 / 3.5 Campaign Setting</a></li>
+<li class="leaf  dhtml-menu "><a href="/content/gods-list" title="" id="dhtml_menu-631">| Gods List</a></li>
+<li class="leaf  dhtml-menu "><a href="resources/-sigil-resources/090906/sigil-resources_.html" title="" id="dhtml_menu-632">| Sigil Resources</a></li>
+<li class="leaf last dhtml-menu "><a href="sections/planescape-other-systems_.html" title="" id="dhtml_menu-634">| Other Systems</a></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-620">| Resources</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="sections/factions_.html" title="" id="dhtml_menu-627">Factions</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/npcs_.html" title="" id="dhtml_menu-628">| NPCs</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/creatures_.html" title="" id="dhtml_menu-630">| Creatures</a></li>
+<li class="leaf  dhtml-menu "><a href="sections/equipment_.html" title="" id="dhtml_menu-629">| Equipment</a></li>
+<li class="leaf last dhtml-menu "><a href="sections/adventures_.html" title="" id="dhtml_menu-633">| Adventures</a></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="_.html" title="" id="dhtml_menu-621">| Fiction</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="sections/chronicles_.html" title="" id="dhtml_menu-279">Chronicles of the Planes</a></li>
+<li class="leaf  dhtml-menu "><a href="eye-of-xaos_.html" title="Eye of Xaos" id="dhtml_menu-1041">| Eye of XAOS</a></li>
+<li class="leaf  dhtml-menu "><a href="fiction/sigis/080704/sigis_.html" title="S.I.G.I.S" id="dhtml_menu-1043">| S.I.G.I.S.</a></li>
+<li class="leaf last dhtml-menu "><a href="ladys-sharper-eye_.html" title="The Lady&#039;s Sharper Eye" id="dhtml_menu-1042">| The Lady&#039;s Sharper Eye</a></li>
+</ul></li>
